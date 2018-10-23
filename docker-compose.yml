@@ -1,0 +1,17 @@
+###
+# Describe external services
+###
+version: '3'
+services:
+  postgres:
+    ports:
+      - 5432:5432
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
